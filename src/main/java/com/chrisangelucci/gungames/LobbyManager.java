@@ -145,10 +145,7 @@ public class LobbyManager {
             startCountdown(matchTime * 60);
             map = new MapManager(Map.values()[selectedMap]);
             map.teleportPlayers();
-            switch(GameType.values()[gameType]){
-                case DEATHMATCH: currentGame = new Deathmatch(); break;
-                case INFECTED: currentGame = new Infected(); break;
-            }
+            currentGame = GameType.values()[gameType].getInstance();
             gameState = GameType.values()[gameType].toString();
             plugin.getServer().getPluginManager().registerEvents(currentGame, plugin);
         }
