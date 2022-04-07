@@ -1,0 +1,4 @@
+name: GunGames
+version: '${project.version}'
+main: com.chrisangelucci.gungames.GunGames
+api-version: 1.18
